@@ -1,0 +1,43 @@
+<head>
+	<script type="text/javascript" src="utils/math.js"></script>
+	<script type="text/javascript" src="utils/gptKey.js"></script>
+	<script type="text/javascript" src="utils/io.js"></script>
+	<script type="text/javascript" src="creators/skills.js"></script>
+	<script type="text/javascript" src="creators/cv.js"></script>
+	<script type="text/javascript" src="creators/mission.js"></script>
+	<script type="text/javascript" src="creators/places.js"></script>
+	<script type="text/javascript" src="utils/gpt.js"></script>
+
+	<script type="text/javascript">
+
+		//************************************************************************************
+		// All parameters of makeGPT35TurboRequest are functions.
+		// The first returns a text with a request for GPT.
+		// The second returns the secret getKey.
+		// The third return parameters for the first function (to save them in callback).
+		// The last one is a callback from GPT with results.
+		//************************************************************************************
+
+		function callOnes() {
+			makeGPT35TurboRequest(getMissionDescriptionText, getKeyFromScript, getMissionParametersDesigned, writeToPage);
+			makeGPT35TurboRequest(getMissionFullMatchText, getKeyFromScript, getMissionParametersDesigned, writeToPage);
+		};
+
+		function callMultiple() {
+			window.setInterval(function () {
+				makeGPT35TurboRequest(getCVRequestText, getKeyFromScript, getStatsRnd, writeToPage);
+			}, 60000);
+		};
+
+		window.onload = function () {
+			callOnes();
+		};
+	</script>
+</head>
+
+<body>
+	<p>Initial parameters:</p>
+	<div id="STAT"></div>
+	<p>GPT response:</p>
+	<div id="RESP"></div>
+</body>

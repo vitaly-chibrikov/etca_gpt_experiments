@@ -1,0 +1,17 @@
+{
+    //*************************************************************************************************************************
+    // Use with your key in URL and function getKeyFromURL
+    // like: makeGPT35TurboRequest(getMissionDescriptionText, getKeyFromURL, getMissionParametersDesigned, writeToPage);
+    // Or add a script utils/gptKey.js and use function getKeyFromScript
+    // like: makeGPT35TurboRequest(getMissionDescriptionText, getKeyFromScript, getMissionParametersDesigned, writeToPage);
+    //*************************************************************************************************************************
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Call GPT",
+            "file": "gptrequest.html?key=yourGPTKey"
+        }
+    ]
+}

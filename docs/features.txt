@@ -1,0 +1,8 @@
+Todo list:
+Admin pannel (Django?)
+Save data to local base (Mongo?)
+UI with astronaut selection and mission selection 
+UI with debriefing
+Teams
+Main Character's perks
+News
