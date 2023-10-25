@@ -1,8 +1,17 @@
 Todo list:
 Admin pannel (Django?)
 Save data to local base (Mongo?)
-UI with astronaut selection and mission selection 
-UI with debriefing
+UI (Pygame, PyQT?)
+Window with CVs (user's tags filters) + dates an astronaut can arrive.
+Window with CV (+ add tags field). Button "Contact and hire". 
+Window with employed astronauts (user's tags, confirmed good and bad skills, status)
+Window with missions (3 lists: new, current and finished missions)
+Window with mission details. Dropdown with astronauts and tags. Button "Start mission".
+Window with mission details and debriefing for finished missions.
+Illness, vacations, emergency situations, tasks from other department
+Astrunaut's mood (if he was sent to not-his-best missions, he may deside to leave ETCA)
 Teams
 Main Character's perks
 News
+Sequence of missions (next based on the previous)
+Payments and a budget
