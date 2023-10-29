@@ -11,33 +11,25 @@ missions = [
     { place: "Recreation and Social Center", who: "Half Moon Pet Shop", task: "an improvements for pet animals", skillsNeeded: ["Construction and Maintenance Knowledge", "Engineering Skills"] },
     { place: "Greenhouse", who: "Blossom Enthusiasts Society", task: "a holding of a flower festival", skillsNeeded: ["Communication Skills", "Teamwork Skills"] },
     { place: "Manufacturing Facility", who: "VC Group", task: "a process of creation of dyes from lunar regolith", skillsNeeded: ["Chemistry Knowledge", "Astrogeology Knowledge"] },
-    { place: "Habitat Module", who: "Inhabitants' committee", task: "a regulation of artificial day and nigth cycle ", skillsNeeded: ["Problem-Solving Skills", "Healthcare Skills"] }
+    { place: "Habitat Module", who: "Inhabitants' committee", task: "a regulation of artificial day and nigth cycle ", skillsNeeded: ["Problem-Solving Skills", "Healthcare Skills"] },
+    { place: "Research Lab", who: "Department of Cosmogony", task: "finding of ancient asteroids in Moon craters", skillsNeeded: ["Navigation and Orientation Skills", "Astrogeology Knowledge"] },
+    { place: "Construction site", who: "Nuh Beton", task: "tests of self-healing concrete from Moon dust", skillsNeeded: ["Construction and Maintenance Knowledge", "Chemistry Knowledge"] },
+    { place: "Solar panel", who: "LUNA RING", task: "tuning of software of cleaning robots", skillsNeeded: ["Problem-Solving Skills", "Engineering Skills"] },
+    { place: "Energy storage facility", who: "Facilities Inspection", task: "improvements in anti-asteroid protection", skillsNeeded: ["Construction and Maintenance Knowledge", "Engineering Skills"] },
+    { place: "Thermonuclear plant", who: "Administration", task: "a safety training", skillsNeeded: ["Emergency Response Skills", "Physical Fitness Training"] },
+    { place: "Thermonuclear plant", who: "Engineering team", task: "research of super-conductors from local materials", skillsNeeded: ["Scientific Knowledge", "Chemistry Knowledge"] },
+    { place: "Emergency Shelter", who: "Administration", task: "Moon surface survival competitions", skillsNeeded: ["Navigation and Orientation Skills", "Environmental Training"] }
+
 ];
 
-function getMissionParameters() {
-    const parameters = {
-        place: "Cafeteria and Food Preparation Area",
-        task: "a routine inspection",
-        skillsNeeded: ["Resource Utilization Knowledges", "Biology and Nutritional Knowledge"]
-    };
-    return parameters;
-};
 
-function getMissionParametersDesigned() {
-    return missions[missions.length - 1];
+function getPossibleMissionsRequestText(){
+    "I need to write a sci-fi story about a colony on Moon. The colony is big. 10000 people lives there." +
+    'An astronaut with exceptional skills in "Healthcare Skills" and "Operational Skills" is going to work in "Waste Recycling Center". What kind of tasks he is ready to solve?';
 }
 
-function getMissionParametersRnd() {
-    var skills = Object.keys(skillsMap);
-    shuffleArray(skills);
-    var places = Object.keys(placesDescMap);
-
-    const parameters = {
-        place: places[getRndInteger(0, places.length)],
-        task: "a routine inspection",
-        skillsNeeded: [skills[0], skills[2]]
-    };
-    return parameters;
+function getMissionParametersDesigned() {
+    return missions[0];//missions[missions.length - 1];
 }
 
 //************************************************************************************
@@ -90,6 +82,26 @@ function getMissionFirstMatchText(parameters) {
         + ' The task-giver, ' + parameters.who + ', estimates that the goal can be reached in several days.'
         + ' To do it perfectly, one needs good ' + parameters.skillsNeeded[0] + ' and ' + parameters.skillsNeeded[1] + '.'
         + ' An astronaut named Constantine Constantinopolus with exceptional skills in ' + parameters.skillsNeeded[0] + ' but with mediocre ' + parameters.skillsNeeded[1] + ' is going to do this activity.'
+        + ' Create a short story about this activity. And how he done it.'
+        + ' Add a title to the text. The title must be less than 5 words.'
+        + ' Start with the sentence: Eager to help his colony, Constantine began working on the task.'
+        + ' Mention, that an astronaut used his best skill to solve the task, but not completely, couse of lask of another important skill. The task is done, but not perfectly.'
+        + " Markup the document as an HTML page.";
+
+
+    return missionText;
+};
+
+//************************************************************************************
+// Returns a text for the request of a mission debriefing.
+// The astronaut assigned to the mission have one skill for the mission.
+//************************************************************************************
+function getMissionSecondMatchText(parameters) {
+    var missionText = 'I am going to write a sci-fi story. People have colonized Moon and built a colony there. More than ten thousand people live and work there.'
+        + ' On the Moon base in a ' + parameters.place + ' ' + parameters.task + ' must be done.'
+        + ' The task-giver, ' + parameters.who + ', estimates that the goal can be reached in several days.'
+        + ' To do it perfectly, one needs good ' + parameters.skillsNeeded[0] + ' and ' + parameters.skillsNeeded[1] + '.'
+        + ' An astronaut named Constantine Constantinopolus with exceptional skills in ' + parameters.skillsNeeded[1] + ' but with mediocre ' + parameters.skillsNeeded[0] + ' is going to do this activity.'
         + ' Create a short story about this activity. And how he done it.'
         + ' Add a title to the text. The title must be less than 5 words.'
         + ' Start with the sentence: Eager to help his colony, Constantine began working on the task.'

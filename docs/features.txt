@@ -10,8 +10,12 @@ Window with mission details. Dropdown with astronauts and tags. Button "Start mi
 Window with mission details and debriefing for finished missions.
 Illness, vacations, emergency situations, tasks from other department
 Astrunaut's mood (if he was sent to not-his-best missions, he may deside to leave ETCA)
+Game time is limited by probation period -- 3 months (12 weeks). One can play more, but score is for this time only.
+Game dificulties
 Teams
 Main Character's perks
 News
 Sequence of missions (next based on the previous)
 Payments and a budget
+success and failure of the mission
+Day-night cycle of Moon
